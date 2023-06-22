@@ -7,7 +7,7 @@ class RabbitmqConsumer:
         self.__port = 5672
         self.__username = "guest"
         self.__password = "guest"
-        self.__queue = "data_queue"
+        self.__queue = "data_queue_3"
         self.__callback = callback
         self.__channel = self.__create_channel()
 
@@ -29,7 +29,11 @@ class RabbitmqConsumer:
         channel.queue_declare(
 
             queue=self.__queue,
-            durable=True
+            durable=True,
+            arguments={
+                
+                "x-overflow": "reject-publish"
+            }
         )
 
 

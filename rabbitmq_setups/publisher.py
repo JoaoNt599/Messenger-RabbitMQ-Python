@@ -10,7 +10,7 @@ class RabbitmqPublisher:
         self.__username = "guest"
         self.__password = "guest"
         self.__exchange = "data_exchange"
-        self.__routing_key = ""
+        self.__routing_key = "" # "RK"
         self.__channel = self.__create_channel()
 
     
